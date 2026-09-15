@@ -1,0 +1,18 @@
+﻿@model BonWeb.Models.Category
+
+<h1>Измени категорија</h1>
+
+<form asp-action="Edit" method="post">
+
+    <input type="hidden" asp-for="Id" />
+
+    <div>
+        <label>Име на категорија</label>
+        <input asp-for="Name" />
+    </div>
+
+    <button type="submit">
+        Зачувај промени
+    </button>
+
+</form>

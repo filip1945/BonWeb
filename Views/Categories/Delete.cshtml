@@ -1,0 +1,22 @@
+﻿@model BonWeb.Models.Category
+
+<h1>Избриши категорија</h1>
+
+<p>
+    Дали сте сигурни дека сакате да ја избришете категоријата
+    <strong>@Model.Name</strong>?
+</p>
+
+<form asp-action="Delete" method="post">
+
+    <input type="hidden" asp-for="Id" />
+
+    <button type="submit">
+        Избриши
+    </button>
+
+    <a asp-controller="Categories" asp-action="Index">
+        Откажи
+    </a>
+
+</form>

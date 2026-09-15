@@ -1,0 +1,63 @@
+﻿@model BonWeb.Models.ContactForm
+
+@{
+    ViewData["Title"] = "Контакт";
+}
+
+@if (ViewBag.Message != null)
+{
+    <p class="contact-success">@ViewBag.Message</p>
+}
+
+<div class="contact-page">
+
+    <div class="contact-container">
+
+        <div class="contact-info">
+            <p class="contact-label">КОНТАКТ</p>
+
+            <h1>Контактирајте нè</h1>
+
+            <p>
+                Имате прашање, предлог или сте заинтересирани за соработка?
+                Испратете ни порака и ќе ви одговориме во најкраток можен рок.
+            </p>
+        </div>
+
+        <form asp-action="Contact" method="post" class="contact-form">
+
+            <div class="form-group">
+                <label>Име и презиме</label>
+                <input asp-for="Name" placeholder="Вашето име">
+            </div>
+
+            <div class="form-group">
+                <label>Email</label>
+                <input asp-for="Email" type="email" placeholder="example@email.com">
+            </div>
+
+            <div class="form-group">
+                <label>Телефон</label>
+                <input asp-for="Phone" placeholder="+389">
+            </div>
+
+            <div class="form-group">
+                <label>Наслов</label>
+                <input asp-for="Subject" placeholder="Наслов на пораката">
+            </div>
+
+            <div class="form-group">
+                <label>Порака</label>
+                <textarea asp-for="Message" rows="6"
+                          placeholder="Напишете ја вашата порака..."></textarea>
+            </div>
+
+            <button type="submit" class="send-btn">
+                Испрати email
+            </button>
+
+        </form>
+
+    </div>
+
+</div>

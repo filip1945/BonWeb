@@ -1,0 +1,44 @@
+﻿@model BonWeb.Models.Product
+
+<h1>Измени производ</h1>
+
+<form asp-action="Edit" method="post">
+
+    <input type="hidden" asp-for="Id" />
+
+    <div>
+        <label>Име</label>
+        <input asp-for="Name" />
+    </div>
+
+    <div>
+        <label>Опис</label>
+        <input asp-for="Description" />
+    </div>
+
+    <div>
+        <label>Цена</label>
+        <input asp-for="Price" />
+    </div>
+
+    <div>
+        <label>Слика</label>
+        <input asp-for="ImageUrl" />
+    </div>
+
+    <div>
+        <label>Категорија</label>
+
+        <select asp-for="CategoryId">
+            @foreach (var category in ViewBag.Categories)
+            {
+                <option value="@category.Id">
+                    @category.Name
+                </option>
+            }
+        </select>
+    </div>
+
+    <button type="submit">Зачувај промени</button>
+
+</form>

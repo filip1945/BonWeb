@@ -1,0 +1,109 @@
+﻿@model List<BonWeb.Models.Product>
+
+<div class="products-page">
+
+    <div class="products-header">
+        <p class="products-label">BON PRODUCTS</p>
+        <h1>Нашите производи</h1>
+        <p>Откријте го нашиот асортиман.</p>
+    </div>
+    
+    <form asp-controller="Products"
+          asp-action="Index"
+          method="get"
+          class="products-search">
+
+        <input type="text"
+               name="search"
+               value="@ViewBag.Search"
+               placeholder="Пребарај производ...">
+
+        @if (ViewBag.SelectedCategory != null)
+        {
+            <input type="hidden"
+                   name="categoryId"
+                   value="@ViewBag.SelectedCategory">
+        }
+
+        <button type="submit">
+            Пребарај
+        </button>
+    </form>
+    
+    
+    <div class="category-filters">
+
+        <a asp-controller="Products"
+           asp-action="Index"
+           class="category-filter @(ViewBag.SelectedCategory == null ? "active" : "")">
+            Сите
+        </a>
+
+        @foreach (var category in ViewBag.Categories)
+        {
+            <a asp-controller="Products"
+               asp-action="Index"
+               asp-route-categoryId="@category.Id"
+               class="category-filter @(ViewBag.SelectedCategory == category.Id ? "active" : "")">
+                @category.Name
+            </a>
+        }
+
+    </div>
+
+    <div class="products-grid">
+
+        @foreach (var product in Model)
+        {
+            <div class="product-card">
+
+                <div class="product-image">
+                    <img src="@product.ImageUrl" alt="@product.Name">
+                </div>
+
+                <div class="product-info">
+
+                    <p class="product-category">
+                        @product.Category?.Name
+                    </p>
+
+                    <h2>@product.Name</h2>
+
+                    <p class="product-description">
+                        @product.Description
+                    </p>
+
+                    <div class="product-bottom">
+
+                        <span class="product-price">
+                            @product.Price ден.
+                        </span>
+
+                        <div class="product-actions">
+
+                            <a asp-controller="Products"
+                               asp-action="Details"
+                               asp-route-id="@product.Id"
+                               class="details-btn">
+                                Детали
+                            </a>
+
+                            <a asp-controller="Cart"
+                               asp-action="AddToCart"
+                               asp-route-id="@product.Id"
+                               class="cart-btn">
+                                Додади во кошничка
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        }
+
+    </div>
+
+</div>

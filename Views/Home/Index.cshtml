@@ -1,0 +1,126 @@
+﻿@{
+    ViewData["Title"] = "Почетна";
+}
+
+<div class="home-page">
+    
+    <div class="floating-decorations">
+        <img src="~/Images/badem.png" class="floating-item item-1">
+        <img src="~/Images/indiski.png" class="floating-item item-2">
+        <img src="~/Images/kikirika.png" class="floating-item item-3">
+        <img src="~/Images/list.png" class="floating-item item-4">
+
+        <img src="~/Images/badem.png" class="floating-item item-5">
+        <img src="~/Images/kikirika.png" class="floating-item item-6">
+        <img src="~/Images/list.png" class="floating-item item-7">
+        <img src="~/Images/indiski.png" class="floating-item item-8">
+
+        <img src="~/Images/kikirika.png" class="floating-item item-9">
+        <img src="~/Images/badem.png" class="floating-item item-10">
+        <img src="~/Images/list.png" class="floating-item item-11">
+        <img src="~/Images/indiski.png" class="floating-item item-12">
+
+        <img src="~/Images/badem.png" class="floating-item item-13">
+        <img src="~/Images/kikirika.png" class="floating-item item-14">
+        <img src="~/Images/indiski.png" class="floating-item item-15">
+        <img src="~/Images/list.png" class="floating-item item-16">
+
+        <img src="~/Images/kikirika.png" class="floating-item item-17">
+        <img src="~/Images/badem.png" class="floating-item item-18">
+        <img src="~/Images/list.png" class="floating-item item-19">
+        <img src="~/Images/indiski.png" class="floating-item item-20">
+    </div>
+
+    <section class="hero-section">
+
+        <div class="hero-products">
+
+            <img src="~/Images/Products/soncogled.png"
+                 class="hero-product product-left-2">
+
+            <img src="~/Images/Products/bademi.png"
+                 class="hero-product product-left-1">
+
+            <img src="~/Images/Products/kikiriki.png"
+                 class="hero-product product-center">
+
+            <img src="~/Images/Products/pcenka.png"
+                 class="hero-product product-right-1">
+
+            <img src="~/Images/Products/kokos.png"
+                 class="hero-product product-right-2">
+
+        </div>
+
+    </section>
+
+    <section class="home-intro">
+
+
+        <h2>
+            Повеќе од 20 години со вас!
+        </h2>
+
+        <p class="home-intro-text">
+            БОН е компанија специјализирана за преработка и пакување на кафе, кикирики, семки, сончоглед, ориз и други зрнести производи. Веќе 23 години, нашиот квалитет и традиција се препознатливи на македонскиот пазар.
+
+            Со внимателен избор на суровини и посветеност во секој чекор од производството, создаваме производи кои се дел од секојдневието на нашите потрошувачи. Нашата цел е едноставна – препознатлив вкус, постојан квалитет и доверба што трае.
+        </p>
+
+        <div class="home-buttons">
+            <a asp-controller="Home" asp-action="About" class="home-btn primary-btn">
+                Дознај повеќе
+            </a>
+
+            <a href="~/Files/bon-katalog.pdf" class="home-btn catalog-btn">
+                Онлајн каталог
+            </a>
+        </div>
+
+    </section>
+    <section class="featured-products">
+
+        <div class="featured-header">
+            <p class="featured-label">НАШИОТ ИЗБОР</p>
+            <h2>Најпознати производи</h2>
+            <p>Откријте дел од омилените BON производи.</p>
+        </div>
+
+        <div class="featured-grid">
+
+            <div class="featured-card">
+                <img src="~/Images/Products/minas.png" alt="BON Minas">
+                <h3>BON Kafe Minas</h3>
+            </div>
+
+            <div class="featured-card">
+                <img src="~/Images/Products/mrsni.png" alt="BON Кикирики">
+                <h3>Мрсени Кикирики</h3>
+            </div>
+
+            <div class="featured-card">
+                <img src="~/Images/Products/bademi.png" alt="BON Бадем">
+                <h3>Печени Бадеми</h3>
+            </div>
+
+            <div class="featured-card">
+                <img src="~/Images/Products/sliva.png" alt="BON Бадем">
+                <h3>Сува слива</h3>
+            </div>
+
+            <div class="featured-card">
+                <img src="~/Images/Products/oriz.png" alt="BON Бадем">
+                <h3>Кочански ориз</h3>
+            </div>
+
+        </div>
+
+        <a asp-controller="Products"
+           asp-action="Index"
+           class="view-products-btn">
+            Погледни ги сите производи
+        </a>
+
+    </section>
+
+</div>

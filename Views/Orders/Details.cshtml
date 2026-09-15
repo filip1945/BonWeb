@@ -1,0 +1,49 @@
+﻿@model BonWeb.Models.Order
+
+<div class="order-details-page">
+
+    <h1>Нарачка #@Model.Id</h1>
+
+    <div class="order-customer">
+
+        <p><strong>Име:</strong> @Model.FullName</p>
+
+        <p><strong>Email:</strong> @Model.Email</p>
+
+        <p><strong>Телефон:</strong> @Model.Phone</p>
+
+        <p><strong>Адреса:</strong> @Model.Address</p>
+
+        <p>
+            <strong>Датум:</strong>
+            @Model.CreatedAt.ToString("dd.MM.yyyy HH:mm")
+        </p>
+
+    </div>
+
+    <h2>Производи</h2>
+
+    @foreach (var item in Model.Items)
+    {
+        <div class="order-product">
+
+            <div>
+                <strong>@item.ProductName</strong>
+            </div>
+
+            <div>
+                @item.Quantity x @item.Price ден.
+            </div>
+
+            <div>
+                @(item.Quantity * item.Price) ден.
+            </div>
+
+        </div>
+    }
+
+    <div class="order-total">
+        Вкупно: @Model.TotalPrice ден.
+    </div>
+
+</div>

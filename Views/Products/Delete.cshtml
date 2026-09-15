@@ -1,0 +1,22 @@
+﻿@model BonWeb.Models.Product
+
+<h1>Избриши производ</h1>
+
+<p>
+    Дали сте сигурни дека сакате да го избришете производот
+    <strong>@Model.Name</strong>?
+</p>
+
+<form asp-action="Delete" method="post">
+
+    <input type="hidden" asp-for="Id" />
+
+    <button type="submit">
+        Избриши
+    </button>
+
+    <a asp-controller="Products" asp-action="Index">
+        Откажи
+    </a>
+
+</form>

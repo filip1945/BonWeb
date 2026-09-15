@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>@ViewData["Title"] - BonWeb</title>
+    <script type="importmap"></script>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="~/BonWeb.styles.css" asp-append-version="true"/>
+</head>
+<body>
+<header class="bon-navbar">
+    <div class="bon-navbar-container">
+
+        <a asp-controller="Home" asp-action="Index">
+            <img id="logo" src="~/Images/logo.png" alt="BON">
+        </a>
+
+        <nav class="bon-nav-links">
+            <a asp-controller="Home" asp-action="Index">Почетна</a>
+            <a asp-controller="Home" asp-action="About">За нас</a>
+            <a asp-controller="Products" asp-action="Index">Производи</a>
+            <a asp-controller="Home" asp-action="Contact">Контакт</a>
+        </nav>
+
+        <div class="navbar-right">
+
+            <a asp-controller="Cart"
+               asp-action="Index"
+               class="cart-link">
+                🛒 Кошничка
+            </a>
+
+            <partial name="_LoginPartial" />
+
+        </div>
+
+    </div>
+</header>
+<main role="main">
+    @RenderBody()
+</main>
+
+<footer class="border-top footer text-muted">
+    <div class="container">
+        &copy; ИнтерКафе2024. Сите права се задржани. <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+    </div>
+</footer>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+@await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

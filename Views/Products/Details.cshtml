@@ -1,0 +1,48 @@
+﻿@model BonWeb.Models.Product
+
+<div class="product-details-page">
+
+    <div class="product-details-container">
+
+        <div class="product-details-image">
+            <img src="@Model.ImageUrl" alt="@Model.Name">
+        </div>
+
+        <div class="product-details-info">
+
+            <p class="product-details-category">
+                @Model.Category?.Name
+            </p>
+
+            <h1>@Model.Name</h1>
+
+            <p class="product-details-description">
+                @Model.Description
+            </p>
+
+            <div class="product-details-price">
+                @Model.Price ден.
+            </div>
+
+            <div class="product-details-actions">
+
+                <a asp-controller="Cart"
+                   asp-action="AddToCart"
+                   asp-route-id="@Model.Id"
+                   class="product-details-cart">
+                    Додади во кошничка
+                </a>
+
+                <a asp-controller="Products"
+                   asp-action="Index"
+                   class="product-details-back">
+                    Назад кон производи
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

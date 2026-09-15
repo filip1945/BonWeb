@@ -1,0 +1,16 @@
+﻿@model BonWeb.Models.Category
+
+<h1>Додај категорија</h1>
+
+<form asp-action="Create" method="post">
+
+    <div>
+        <label>Име на категорија</label>
+        <input asp-for="Name" />
+    </div>
+
+    <button type="submit">
+        Додај категорија
+    </button>
+
+</form>
